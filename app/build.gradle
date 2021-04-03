@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+def cprops = new Properties()
+cprops.load(new FileInputStream(file('config.properties')))
+def config = new ConfigSlurper().parse(cprops)
+
+android {
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+    defaultConfig {
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion composeVersion
+        kotlinCompilerVersion '1.4.30'
+    }
+
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "env"
+    productFlavors {
+        development {
+            dimension "env"
+            applicationId "com.abrahamlay.movielicious.dev"
+            buildConfigField("String", "API_BASE_URL", config.env.dev.baseurl)
+        }
+        staging {
+            dimension "env"
+            applicationId "com.abrahamlay.movielicious.dev"
+            buildConfigField("String", "API_BASE_URL", config.env.staging.baseurl)
+        }
+        production {
+            dimension "env"
+            applicationId 'com.abrahamlay.movielicious'
+            buildConfigField("String", "API_BASE_URL", config.env.prod.baseurl)
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation kotlinStdLib
+
+    //androidx
+    implementation support.appcompat
+    implementation support.constraint
+    implementation support.recyclerview
+    implementation support.core
+    implementation support.design
+
+    def androidx_ui = "1.0.0-alpha07"
+    implementation "androidx.ui:ui-tooling:$androidx_ui"
+
+    //compose
+    implementation compose.ui
+    implementation compose.foundation
+    implementation compose.runtime
+    implementation compose.livedata
+    implementation compose.rxjava
+    implementation compose.material
+
+    //navigation
+    implementation support.navigationFragment
+    implementation support.navigationUi
+
+    //network
+    implementation libs.retrofit
+    implementation libs.okhttp
+    implementation libs.gson
+
+    //hilt
+    implementation libs.hiltAndroid
+    kapt libs.hiltCompilerAndroid
+
+    //hilt livecycle vm
+    implementation libs.hiltLivecycleVM
+    kapt libs.hiltCompilerLivecycleVM
+}

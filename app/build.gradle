@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
 }
 
 def cprops = new Properties()
@@ -122,6 +123,15 @@ dependencies {
     implementation libs.retrofit
     implementation libs.okhttp
     implementation libs.gson
+
+    //rxjava
+    implementation libs.rxjava
+
+    //database
+    implementation support.room
+    kapt support.roomCompiler
+//    implementation support.roomCommon
+//    implementation support.roomRxJava
 
     //hilt
     implementation libs.hiltAndroid

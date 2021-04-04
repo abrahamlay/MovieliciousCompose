@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -49,6 +50,15 @@ dependencies {
     implementation libs.hiltAndroid
     kapt libs.hiltCompilerAndroid
 
+    //rxjava
+    implementation libs.rxjava
+
+
+    //database
+    implementation support.room
+    kapt support.roomCompiler
+//    implementation support.roomCommon
+//    implementation support.roomRxJava
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

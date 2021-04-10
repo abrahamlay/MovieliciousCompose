@@ -43,10 +43,12 @@ ext {
     mockitoVersion = '2.8.47'
 
     //compose
-    composeVersion = "1.0.0-alpha07"
+    composeVersion = "1.0.0-beta01"
+    activityComposeVersion = "1.3.0-alpha02"
 
     compose = [
             ui        : "androidx.compose.ui:ui:$composeVersion",
+            tooling   : "androidx.compose.ui:ui-tooling:$composeVersion",
             foundation: "androidx.compose.foundation:foundation:$composeVersion",
             runtime   : "androidx.compose.runtime:runtime:$composeVersion",
             livedata  : "androidx.compose.runtime:runtime-livedata:$composeVersion",
@@ -98,7 +100,8 @@ ext {
             koinScope            : "org.koin:koin-androidx-scope:$koinVersion",
             koinViewmodel        : "org.koin:koin-androidx-viewmodel:$koinVersion",
             coroutines           : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
-            coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+            coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+            activityCompose      : "androidx.activity:activity-compose:$activityComposeVersion"
     ]
 
     test = [

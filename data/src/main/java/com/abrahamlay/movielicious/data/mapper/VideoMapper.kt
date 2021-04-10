@@ -1,6 +1,6 @@
 package com.abrahamlay.movielicious.data.mapper
 
-import com.abrahamlay.data.dtos.VideoDto
+import com.abrahamlay.movielicious.data.dtos.VideoDto
 import com.abrahamlay.movielicious.domain.entities.VideoModel
 
 

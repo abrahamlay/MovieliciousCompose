@@ -14,7 +14,10 @@ class DeleteFavoriteMovie constructor(
     postExecutionThread: PostExecutionThread
 ) : FlowableUseCase<Int, DeleteFavoriteMovie.Params>(postExecutionThread) {
     override fun build(params: Params): Flowable<Int> {
-        return Flowable.just(repository.deleteFavoriteMovie(params.movieModel))
+        return Flowable.just(
+            null
+//            repository.deleteFavoriteMovie(params.movieModel)
+        )
     }
 
     data class Params(val movieModel: MovieModel)

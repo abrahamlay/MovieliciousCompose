@@ -1,6 +1,6 @@
 package com.abrahamlay.movielicious.data.remote
 
-import com.abrahamlay.data.dtos.*
+import com.abrahamlay.movielicious.data.dtos.*
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Path

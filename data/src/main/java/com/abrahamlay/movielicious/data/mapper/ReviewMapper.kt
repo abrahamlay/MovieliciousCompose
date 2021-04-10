@@ -1,6 +1,6 @@
 package com.abrahamlay.movielicious.data.mapper
 
-import com.abrahamlay.data.dtos.ReviewDto
+import com.abrahamlay.movielicious.data.dtos.ReviewDto
 import com.abrahamlay.movielicious.domain.entities.ReviewModel
 
 

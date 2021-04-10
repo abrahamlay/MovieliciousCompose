@@ -1,6 +1,6 @@
 package com.abrahamlay.movielicious.data.mapper
 
-import com.abrahamlay.data.dtos.DetailMovieDto
+import com.abrahamlay.movielicious.data.dtos.DetailMovieDto
 import com.abrahamlay.movielicious.domain.entities.DetailMovieModel
 
 /**
@@ -8,7 +8,7 @@ import com.abrahamlay.movielicious.domain.entities.DetailMovieModel
  */
 
 class DetailMovieMapper : Mapper<DetailMovieDto?, DetailMovieModel>() {
-    override fun apply(from: DetailMovieDto?): DetailMovieModel? {
+    override fun apply(from: DetailMovieDto?): DetailMovieModel {
         return DetailMovieModel(
             from?.adult,
             from?.backdropPath,

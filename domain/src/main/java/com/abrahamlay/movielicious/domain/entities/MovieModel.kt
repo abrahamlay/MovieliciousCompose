@@ -1,18 +1,19 @@
 package com.abrahamlay.movielicious.domain.entities
 
 import android.os.Parcelable
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+//import androidx.room.Entity
+//import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 /**
  * Created by Abraham Lay on 2020-06-09.
  */
 @Parcelize
-@Entity
+//@Entity
 data class MovieModel(
     var voteCount: Int,
-    @PrimaryKey var id: Int,
+//    @PrimaryKey
+    var id: Int,
     var video: Boolean,
     var voteAverage: Double,
     var title: String?,

@@ -2,8 +2,6 @@ package com.abrahamlay.movielicious.movieliciouscompose.di
 
 import android.content.Context
 import androidx.room.Room
-import com.abrahamlay.data.db.AppDatabase
-import com.abrahamlay.movielicious.data.db.MovieDao
 import com.abrahamlay.movielicious.data.mapper.DetailMovieMapper
 import com.abrahamlay.movielicious.data.mapper.MovieMapper
 import com.abrahamlay.movielicious.data.mapper.ReviewMapper
@@ -24,19 +22,19 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun provideMovieRepository(movieApi: MovieApi, movieDao: MovieDao): MovieRepository =
+    fun provideMovieRepository(movieApi: MovieApi): MovieRepository =
         MovieRepositoryImpl(
-            movieApi, movieDao, MovieMapper(), ReviewMapper(),
+            movieApi, MovieMapper(), ReviewMapper(),
             VideoMapper(), DetailMovieMapper()
         )
 
-    @Singleton
-    @Provides
-    fun provideAppDatabase(context: Context): AppDatabase =
-        Room.databaseBuilder(context, AppDatabase::class.java, BuildConfig.APPLICATION_ID)
-            .build()
-
-    @Singleton
-    @Provides
-    fun provideMovieDao(appDatabase: AppDatabase) = appDatabase.movieDao()
+//    @Singleton
+//    @Provides
+//    fun provideAppDatabase(context: Context): AppDatabase =
+//        Room.databaseBuilder(context, AppDatabase::class.java, BuildConfig.APPLICATION_ID)
+//            .build()
+//
+//    @Singleton
+//    @Provides
+//    fun provideMovieDao(appDatabase: AppDatabase) = appDatabase.movieDao()
 }

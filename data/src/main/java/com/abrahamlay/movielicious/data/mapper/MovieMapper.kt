@@ -1,6 +1,6 @@
 package com.abrahamlay.movielicious.data.mapper
 
-import com.abrahamlay.data.dtos.MovieDto
+import com.abrahamlay.movielicious.data.dtos.MovieDto
 import com.abrahamlay.movielicious.domain.entities.MovieModel
 
 /**

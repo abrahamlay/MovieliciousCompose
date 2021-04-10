@@ -1,4 +1,4 @@
-package com.abrahamlay.data.dtos
+package com.abrahamlay.movielicious.data.dtos
 
 
 import com.google.gson.annotations.SerializedName

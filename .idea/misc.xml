@@ -6,11 +6,13 @@
         <entry key="../../../../layout/compose-model-1616917042451.xml" value="0.25" />
         <entry key="../../../../layout/compose-model-1617354841344.xml" value="0.1" />
         <entry key="../../../../layout/compose-model-1617422063593.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1618064357036.xml" value="0.5" />
+        <entry key="../../../../layout/compose-model-1618066763823.xml" value="0.1" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio java home" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

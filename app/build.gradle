@@ -114,6 +114,7 @@ dependencies {
     implementation compose.livedata
     implementation compose.rxjava
     implementation compose.material
+    implementation compose.snapHelper
 
     //navigation
     implementation support.navigationFragment

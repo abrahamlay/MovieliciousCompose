@@ -45,6 +45,7 @@ ext {
     //compose
     composeVersion = "1.0.0-beta01"
     activityComposeVersion = "1.3.0-alpha02"
+    snapHelperVersion = "0.4.1"
 
     compose = [
             ui        : "androidx.compose.ui:ui:$composeVersion",
@@ -55,7 +56,8 @@ ext {
             rxjava    : "androidx.compose.runtime:runtime-rxjava2:$composeVersion",
             material  : ["androidx.compose.material:material:$composeVersion",
                          "androidx.compose.material:material-icons-core:$composeVersion",
-                         "androidx.compose.material:material-icons-extended:$composeVersion"]
+                         "androidx.compose.material:material-icons-extended:$composeVersion"],
+            snapHelper: "com.github.aakarshrestha:compose-pager-snap-helper:$snapHelperVersion"
     ]
 
     libs = [
